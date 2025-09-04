@@ -1,0 +1,632 @@
+/* --------------------------
+   VARIABLES DE COLOR
+--------------------------- */
+:root {
+  --brand: #2563eb;        /* Azul primario */
+  --brand-dark: #0f172a;   /* Azul oscuro */
+  --accent: #facc15;       /* Amarillo acento */
+  --ink: #0b1220;          /* Texto principal */
+  --muted: #6b7280;        /* Texto secundario */
+  --bg: #f8fafc;           /* Fondo suave */
+  --card: #ffffff;         /* Fondo tarjeta */
+  --ring: #e5e7eb;         /* Bordes suaves */
+}
+
+/* --------------------------
+   RESET & BASE
+--------------------------- */
+* { box-sizing: border-box; }
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  margin: 0;
+  padding: 0;
+  color: var(--ink);
+  background: var(--bg);
+  line-height: 1.6;
+}
+
+a { text-decoration: none; transition: all 0.2s ease; }
+a:hover { opacity: 0.85; }
+
+/* --------------------------
+   NAVBAR
+--------------------------- */
+nav .links a {
+  margin-left: 20px;
+  color: var(--ink);
+  font-weight: 600;
+}
+nav .links a:hover { color: var(--brand); }
+
+/* --------------------------
+   HERO
+--------------------------- */
+.hero {
+  padding: 96px 20px;
+  background: radial-gradient(1200px 400px at 10% 0%, rgba(37, 99, 235, .12), transparent),
+              radial-gradient(1000px 600px at 110% 10%, rgba(250, 204, 21, .12), transparent),
+              linear-gradient(180deg, #fff, #f9fafb);
+}
+.hero h1 {
+  font-size: clamp(30px, 5vw, 56px);
+  margin: 0 0 8px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+.hero p {
+  font-size: clamp(16px, 2.2vw, 20px);
+  margin: 0;
+  color: #334155;
+}
+.pill {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: #eef2ff;
+  color: #3730a3;
+  font-weight: 600;
+  font-size: 12px;
+}
+.subtitle { color: var(--muted); }
+
+/* --------------------------
+   BOTONES
+--------------------------- */
+.btn-brand {
+  background: var(--brand);
+  border: 1px solid var(--brand);
+  color: #fff;
+}
+.btn-brand:hover { filter: brightness(1.08); }
+
+.btn-ghost {
+  background: #fff;
+  border: 1px solid var(--ring);
+  color: var(--ink);
+}
+.btn-ghost:hover {
+  border-color: var(--brand);
+  color: var(--brand);
+}
+
+/* --------------------------
+   TITULOS DE SECCIÓN
+--------------------------- */
+.section-title {
+  font-size: 28px;
+  margin: 0 0 8px;
+  font-weight: 800;
+}
+.subtitle {
+  font-size: 18px;
+  margin: 0 0 24px;
+}
+
+/* --------------------------
+   CARDS GENERALES
+--------------------------- */
+.cardx {
+  background: var(--card);
+  border: 1px solid var(--ring);
+  border-radius: 16px;
+  padding: 20px;
+  transition: .3s ease;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, .03);
+}
+.cardx:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, .08);
+}
+
+/* --------------------------
+   EQUIPO
+--------------------------- */
+.member {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  margin-bottom: 12px;
+}
+.member img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #fff;
+  box-shadow: 0 6px 16px rgba(2, 6, 23, .15);
+}
+.linkedin-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 10px;
+  border: 1px solid var(--ring);
+  color: var(--ink);
+  font-weight: 500;
+}
+.linkedin-btn:hover {
+  border-color: #0a66c2;
+  color: #0a66c2;
+}
+
+/* --------------------------
+   SERVICIOS
+--------------------------- */
+.service .icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  background: #eef2ff;
+  margin: 0 auto 12px;
+}
+
+/* --------------------------
+   PROYECTOS
+--------------------------- */
+.project { position: relative; overflow: hidden; }
+.project img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+.badge-year {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  background: var(--brand-dark);
+  color: #fff;
+  padding: 4px 10px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: .9rem;
+  z-index: 1;
+}
+
+/* --------------------------
+   FOOTER
+--------------------------- */
+.site-footer{
+  background:#1f2937;
+  color:#e5e7eb;
+  padding: 28px 0;
+  border-top:1px solid rgba(255,255,255,.08);
+  font-size: 0.95rem;
+}
+.footer-flex{
+  display:flex;
+  align-items:center;              /* centra verticalmente */
+  justify-content:space-between;
+  gap:32px;
+}
+.footer-left{
+  flex: 1 1 280px;
+  min-width: 240px;
+}
+.footer-left strong{ display:block; font-size:1.1rem; margin-bottom:4px; }
+.footer-left p{ margin:4px 0; color:#cbd5e1; }
+.footer-left a{ color:#e5e7eb; }
+.footer-left a:hover{ color:var(--brand); }
+
+.footer-center{
+  flex: 0 0 auto;
+  margin: 0 8px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:28px;
+  flex-wrap:wrap;
+}
+.footer-center img{
+  height:48px; width:auto;
+  filter: grayscale(100%) opacity(.8);
+  transition: filter .2s ease, transform .2s ease;
+}
+.footer-center img:hover{
+  filter: grayscale(0%) opacity(1);
+  transform: translateY(-2px);
+}
+
+.footer-right{
+  flex: 1 1 280px;
+  min-width: 240px;
+  text-align:right;
+}
+.footer-right p{ margin-bottom:8px; font-weight:600; }
+.footer-socials{
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+  align-items:flex-end;
+}
+.footer-socials a{
+  color:#e5e7eb;
+  font-weight:600;
+  display:flex;
+  align-items:center;
+  gap:6px;
+}
+.footer-socials a:hover{ color:var(--brand); }
+.footer-socials i{ font-size:1.2rem; }
+
+/* --------------------------
+   FAB WhatsApp
+--------------------------- */
+.fab-whatsapp{
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 10000;
+  width: 60px; height: 60px;
+  display:flex; align-items:center; justify-content:center;
+  font-size: 28px;
+  background:#25d366; color:#fff; border-radius:50%;
+  box-shadow: 0 10px 24px rgba(0,0,0,.35);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.fab-whatsapp:hover{ transform: translateY(-2px) scale(1.05); color:#fff; }
+
+/* --------------------------
+   RESPONSIVE
+--------------------------- */
+@media(max-width:992px){
+  .footer-flex{
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+  }
+  .footer-left, .footer-right{
+    flex: 0 0 auto;
+    min-width: unset;
+    text-align:center;
+  }
+  .footer-socials{ align-items:center; }
+}
+
+
+.footer-right{
+  text-align:right;
+  display:flex;
+  flex-direction:column;
+  align-items:flex-end;
+  margin-left:auto;   /* 👈 lo empuja totalmente a la derecha */
+}
+
+.footer-title{
+  margin-bottom:12px;
+  font-weight:600;
+}
+
+.footer-socials{
+  display:flex;
+  flex-direction:row;       /* íconos en fila */
+  gap:28px;                 /* espacio entre iconos */
+  justify-content:flex-end; /* se alinean a la derecha */
+}
+
+@media(max-width:768px){
+  .footer-right{
+    text-align:center;
+    align-items:center;
+    margin-left:0; /* en móvil lo dejamos centrado */
+  }
+  .footer-socials{
+    justify-content:center;
+  }
+}
+
+#resultados{
+  margin-bottom: 60px; /* Ajusta el valor según el espacio que quieras */
+}
+
+
+
+/* 1) CONTACTO DEL FOOTER - forzar color de texto/enlaces */
+.site-footer .footer-left i{
+  color:#94a3b8;              /* color de los íconos (tel/correo) */
+  margin-right:6px;
+}
+.site-footer .footer-left a,
+.site-footer .footer-left a:visited{
+  color:#e5e7eb !important;   /* forzamos blanco grisáceo, evita el azul */
+  text-decoration:none;
+}
+.site-footer .footer-left a:hover{
+  color: var(--accent) !important;  /* amarillo acento al pasar */
+}
+
+/* 2) BLOQUE DE REDES MÁS A LA DERECHA */
+.site-footer .container{
+  max-width: 1640px;     /* abre un poco más el footer hacia los laterales */
+  padding: 0 48px;       /* aire interno; sube/baja si quieres más/menos borde */
+}
+
+.footer-right{
+  margin-left: auto;     /* empuja el bloque completo a la derecha */
+  min-width: 360px;      /* reserva espacio para que no quede “pegado” al centro */
+  align-items: flex-end; /* contenido pegado a la derecha del bloque */
+  text-align: right;
+}
+
+.footer-socials{
+  justify-content: flex-end;  /* íconos alineados a la derecha */
+  gap: 28px;                  /* separación entre redes */
+}
+
+/* opcional: un pelín más de separación entre logos del centro y redes */
+.footer-center{
+  margin-right: 32px;
+}
+
+/* Móvil: centramos todo para que no quede raro */
+@media (max-width: 992px){
+  .footer-right{
+    margin-left: 0;
+    align-items: center;
+    text-align: center;
+    min-width: 0;
+  }
+  .footer-socials{ justify-content:center; }
+}
+
+
+/* ===== NAV moderno ===== */
+.site-nav{
+  backdrop-filter: saturate(180%) blur(8px);
+  background: rgba(255,255,255,.75);
+  transition: box-shadow .2s ease, background .2s ease, padding .2s ease;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(0,0,0,.04);
+  z-index: 1030; /* por encima del contenido */
+}
+.site-nav .navbar-brand span{ color: var(--ink); }
+.site-nav .nav-link{
+  font-weight: 600;
+  color: #0b1220;
+  padding: 10px 14px;
+  border-radius: 10px;
+}
+.site-nav .nav-link:hover{ color: var(--brand); background: #eef2ff; }
+.site-nav .nav-link.active{ color: var(--brand); background: #eef2ff; }
+.site-nav .navbar-toggler{ color:#0b1220; }
+.site-nav .btn-brand{ padding: 8px 14px; border-radius: 10px; }
+
+@media (max-width: 991.98px){
+  .site-nav{ background: rgba(255,255,255,.92); }
+  .site-nav .navbar-collapse{
+    background: rgba(255,255,255,.96);
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(2,6,23,.12);
+    padding: 12px;
+    margin-top: 10px;
+  }
+  .site-nav .nav-link{
+    width: 100%;
+    padding: 10px 12px;
+  }
+}
+
+/* estado scrolleado: sombra sutil y +compacto */
+.site-nav.is-scrolled{
+  background: rgba(255,255,255,.92);
+  box-shadow: 0 8px 24px rgba(15,23,42,.08);
+  padding: 6px 0;
+}
+
+/* =========================================================
+   THEME: Profesional Oscuro (Slate / Indigo)
+   — PégalO AL FINAL del style.css
+========================================================= */
+
+/* Paleta base más sobria */
+:root {
+  --brand:        #3b82f6;   /* Azul primario (indigo/azul)   */
+  --brand-dark:   #0b1220;   /* Fondo/etiquetas oscuras        */
+  --accent:       #a5b4fc;   /* Acento suave (indigo claro)    */
+  --ink:          #e5e7eb;   /* Texto principal claro          */
+  --muted:        #9aa4b2;   /* Texto secundario               */
+  --bg:           #0f172a;   /* Fondo de página (slate-900)    */
+  --card:         #111827;   /* Tarjetas (slate-800)           */
+  --ring:         #1f2937;   /* Bordes/grillas (slate-700)     */
+}
+
+/* Fondo general + texto */
+body {
+  background: var(--bg);
+  color: var(--ink);
+}
+
+/* NAV mejor contraste y “sticky” elegante */
+.site-nav {
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(255,255,255,.06);
+}
+.site-nav .navbar-brand,
+.site-nav .nav-link {
+  color: var(--ink);
+}
+.site-nav .nav-link:hover,
+.site-nav .nav-link.active {
+  color: var(--accent);
+}
+.site-nav.is-scrolled {
+  box-shadow: 0 10px 30px rgba(0,0,0,.35);
+}
+
+/* HERO con gradiente oscuro */
+.hero {
+  background:
+    radial-gradient(1000px 500px at 10% -10%, rgba(59,130,246,.20), transparent),
+    radial-gradient(900px 450px at 110% 0%, rgba(165,180,252,.18), transparent),
+    linear-gradient(180deg, #0f172a 0%, #0b1220 100%);
+}
+.hero h1 { color: #f8fafc; }
+.hero .subtitle { color: var(--muted); }
+.pill {
+  background: rgba(59,130,246,.15);
+  color: #c7d2fe;
+}
+
+/* Botones */
+.btn-brand {
+  background: var(--brand);
+  border-color: var(--brand);
+  color: #fff;
+  box-shadow: 0 8px 20px rgba(59,130,246,.25);
+}
+.btn-brand:hover { filter: brightness(1.05); }
+
+.btn-ghost {
+  background: transparent;
+  color: var(--ink);
+  border: 1px solid rgba(255,255,255,.14);
+}
+.btn-ghost:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* Tarjetas (equipo / servicios / proyectos) */
+.cardx {
+  background: var(--card);
+  border: 1px solid rgba(255,255,255,.06);
+  box-shadow: 0 12px 24px rgba(2,6,23,.45);
+}
+.cardx:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 36px rgba(2,6,23,.55);
+}
+.text-muted { color: var(--muted) !important; }
+
+/* Servicios: iconos con fondo tenue */
+.service .icon {
+  background: rgba(59,130,246,.15);
+  color: #c7d2fe;
+}
+
+/* Proyectos */
+.project img { filter: saturate(0.95) contrast(1.05); }
+.badge-year {
+  background: #111827;
+  color: #e5e7eb;
+  box-shadow: 0 6px 14px rgba(0,0,0,.35);
+}
+
+/* Sección hex (si la usas) */
+.feature-card { background: var(--card); }
+.feature-title { color: #f3f4f6; }
+.feature-text { color: var(--muted); }
+
+/* Footer más sólido */
+.site-footer{
+  background: #0b1220;
+  border-top: 1px solid rgba(255,255,255,.06);
+  color: var(--ink);
+}
+.site-footer a { color: #e5e7eb; }
+.site-footer a:hover { color: var(--accent); }
+.footer-center img {
+  filter: grayscale(100%) opacity(.85) brightness(.9);
+}
+.footer-center img:hover {
+  filter: grayscale(0%) opacity(1) brightness(1);
+}
+
+/* WhatsApp FAB (respetamos verde pero con mejor glow en oscuro) */
+.fab-whatsapp{
+  box-shadow: 0 12px 28px rgba(0,0,0,.55), 0 0 0 2px rgba(255,255,255,.08) inset;
+}
+.fab-whatsapp:hover{
+  transform: translateY(-2px) scale(1.05);
+}
+
+/* Chat WhatsApp (menú) en oscuro */
+#waMenu{
+  background: #0f172a !important;
+  border-color: rgba(255,255,255,.08) !important;
+  color: var(--ink);
+}
+#waMenu input{
+  background:#0b1220;
+  color:#e5e7eb;
+  border:1px solid rgba(255,255,255,.08);
+}
+#waMenu button{
+  color:#0b1220;
+}
+#waMenu .quick-item,
+#waMenu button[type="button"]{
+  background:#111827 !important;
+  color:#e5e7eb !important;
+  border:1px solid rgba(255,255,255,.08) !important;
+}
+#waMenu .quick-item:hover,
+#waMenu button[type="button"]:hover{
+  border-color:#3b82f6 !important;
+}
+
+/* Separaciones para respirar un poco más en oscuro */
+section { padding: 80px 0; }
+#resultados { margin-bottom: 72px; }
+
+/* NAV – correcciones de contraste y estado scrolleado */
+.site-nav{
+  background: rgba(15,23,42,.85);       /* oscuro translúcido */
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(255,255,255,.06);
+  z-index: 1040;                        /* sobre el contenido */
+}
+
+/* Colores del texto/links (sin opacidad de Bootstrap) */
+.site-nav .navbar-brand,
+.site-nav .nav-link{
+  color: #e5e7eb !important;            /* texto claro */
+  opacity: 1 !important;
+}
+.site-nav .nav-link:hover,
+.site-nav .nav-link.active{
+  color: var(--accent) !important;
+}
+
+/* Estado al scrollear: fondo sólido y sombra */
+.site-nav.is-scrolled{
+  background: #0b1220;
+  box-shadow: 0 10px 30px rgba(0,0,0,.35);
+}
+
+/* Botón hamburguesa visible en oscuro */
+.site-nav .navbar-toggler{
+  border-color: rgba(255,255,255,.25);
+}
+.site-nav .navbar-toggler-icon{
+  filter: invert(1) grayscale(1);
+}
+
+/* Compensa el navbar fijo para que no tape el contenido */
+body{ padding-top: 72px; }    /* ajusta 64–80px según altura de tu nav */
+
+/* Botón "Iniciar sesión" (contorno claro) */
+.site-nav .btn-outline-light{
+  border-color: #e5e7eb;
+  color: #e5e7eb;
+}
+.site-nav .btn-outline-light:hover{
+  background: #e5e7eb;
+  color: #0b1220;
+}
+
+/* Botón "Registrarse" (blanco lleno) */
+.site-nav .btn-light{
+  background: #fff;
+  color: #0b1220;
+  font-weight: 600;
+}
+.site-nav .btn-light:hover{
+  background: var(--accent);
+  color: #0b1220;
+}
